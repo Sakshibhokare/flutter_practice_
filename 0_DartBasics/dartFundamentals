@@ -1,0 +1,21 @@
+// Dart is a oop language 
+// Variable:
+// 1 lecture. 
+void main(){
+    String name = "sakshi";
+    bool male = false;
+    int age = 22;
+    List<String>fruits = ["mango", "apple"];
+    Map<String, dynamic> myData = {
+        "name" : name,
+        "age": age,
+        "male" : male,
+        "fruits": fruits
+    }
+} 
+// - this function is not going to return anything 
+
+// 2nd lecture 
+
+
+

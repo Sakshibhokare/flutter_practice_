@@ -1,0 +1,3 @@
+purchases through stripe
+it can be google map 
+any third party integration 
