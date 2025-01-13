@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) { //build context tell the location of the widget in widget tree it a very important concept 
     return const MaterialApp(
       //setup a playground with a theme
-      home: CurrencyConverterMaterialPage(),
+      home: MyWidget(),
     );
   }
 }
