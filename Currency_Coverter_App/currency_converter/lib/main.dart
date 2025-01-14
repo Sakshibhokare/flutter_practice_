@@ -1,8 +1,10 @@
+import 'package:currency_converter/currency_converter_cupertino.dart';
 import 'package:currency_converter/currency_converter_material_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyCupertinoApp());
 }
 
 // types of Widget
@@ -27,9 +29,20 @@ class MyApp extends StatelessWidget {
 //stateless widget requires to override a widget
   @override
   Widget build(BuildContext context) { //build context tell the location of the widget in widget tree it a very important concept 
-    return const MaterialApp(
-      //setup a playground with a theme
-      home: MyWidget(),
+    return const MaterialApp(//setup a playground with a theme
+      home: CurrencyConverterCupertinoPage(),
+    );
+  }
+}
+
+
+class MyCupertinoApp extends StatelessWidget {
+  const MyCupertinoApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const CupertinoApp(//setup a playground with a theme
+      home: CurrencyConverterCupertinoPage(),
     );
   }
 }
