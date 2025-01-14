@@ -1,0 +1,20 @@
+widgets and widgets lifecycle 
+
+1. widget is something that every class that can be called 
+in the build function 
+2. build function is used to render something on the screen
+
+3. every flutter app is the combination of two widgets 
+stateless and stateful 
+stateless widget are those widget where the state once created and can not be changed
+stateful widgets are widgets those can change the state 
+
+lifecycle of the widgets 
+in case of stateless widget we create the constructor and then call the build function
+
+in case of stateful widget after the constructor we have createState function then build function 
+
+
+we have initstate function to initialise the state 
+
+we have dispose function to remove something to clear the app memory 
