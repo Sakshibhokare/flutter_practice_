@@ -18,4 +18,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//14:47 api keys are not yet activated 
