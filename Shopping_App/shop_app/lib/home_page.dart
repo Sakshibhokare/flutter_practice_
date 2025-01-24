@@ -5,7 +5,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    const border = OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromRGBO(255, 255, 255, 1)
+                        ),
+                        borderRadius: BorderRadius.horizontal(left:Radius.circular(50) )
+                      );
+  
+    return const Scaffold(
       body: SafeArea(
         //safe area will ignore the area of notches of mobile phone
         child: Column(
@@ -24,13 +31,11 @@ class HomePage extends StatelessWidget {
                     decoration: InputDecoration(
                       hintText: 'Search',
                       prefixIcon: Icon(Icons.search),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color.fromRGBO(255, 255, 255, 1)
-                        )
-                      )
-                    ),
+                      border: border,
+                      enabledBorder: border,
+                      focusedBorder: border
                   ))
+                )
               ],
             )
           ],
