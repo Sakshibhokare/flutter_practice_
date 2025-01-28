@@ -9,6 +9,17 @@ class HomePage extends StatefulWidget { //convert to state full so we can get th
 
 class _HomePageState extends State<HomePage> {
   final List<String> filters = const['All', 'Addidas', 'Nike', 'Bata'];
+  // String selectedFilter = filter[0]; cant use like this because initialized previously
+  late String selectedFilter; //value get assign when event will happen so use late 
+
+
+  @override
+  void initState() { //initializing the states 
+    super.initState();
+    selectedFilter= filters[0];
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -56,19 +67,30 @@ class _HomePageState extends State<HomePage> {
                       final filter = filters[index];
                       return Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Chip(
-                          label: Text(filter),
-                          backgroundColor: Color.fromRGBO(245, 247, 249, 1),
-                          side: const BorderSide(
-                            color: Color.fromRGBO(245, 247, 249, 1)
+                        
+                        child: GestureDetector( //have different actions 
+                          onTap: (){
+                            setState(() {
+                              selectedFilter=filter; //when you setting a state initializing a state use proper functions for it 
+                            });
+                            
+                          },
+                          
+                          child: Chip(
+                            label: Text(filter),
+                            backgroundColor: selectedFilter == filter? Theme.of(context).colorScheme.primary : Color.fromRGBO(245, 247, 249, 1),
+                          
+                            side: const BorderSide(
+                              color: Color.fromRGBO(245, 247, 249, 1)
+                            ),
+                            labelStyle: TextStyle(
+                            fontSize: 16
                           ),
-                          labelStyle: TextStyle(
-                          fontSize: 16
-                        ),
-                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                        shape:RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)
-                        ) ,
+                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                          shape:RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)
+                          ) ,
+                          ),
                         ),
                       );
                     },

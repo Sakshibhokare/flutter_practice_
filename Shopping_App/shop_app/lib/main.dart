@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Lato',
           colorScheme: ColorScheme.fromSeed(
             seedColor: Color.fromRGBO(254, 206, 1, 1), //seed color will create a toner palate 
+            primary: Color.fromRGBO(254, 206, 1, 1),
               ),
               inputDecorationTheme: const InputDecorationTheme(
                 hintStyle: TextStyle(
