@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/global_variables.dart';
+import 'package:shop_app/product_card.dart';
 
 class HomePage extends StatefulWidget {
   //convert to state full so we can get the state changes
@@ -87,6 +89,16 @@ class _HomePageState extends State<HomePage> {
                     ),
                   );
                 },
+              ),
+            ),
+
+            Expanded( //expanded will take all amount of possible space 
+              child: ListView.builder(
+                itemCount: products.length,
+                itemBuilder: (context, index){
+                    final product = products[index]; //it will give an access of each product of particular index
+                    return ProductCard(title: 'hii');
+              }
               ),
             )
           ],
