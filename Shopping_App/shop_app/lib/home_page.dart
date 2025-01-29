@@ -97,7 +97,10 @@ class _HomePageState extends State<HomePage> {
                 itemCount: products.length,
                 itemBuilder: (context, index){
                     final product = products[index]; //it will give an access of each product of particular index
-                    return ProductCard(title: 'hii');
+                    return ProductCard(
+                      title: product['title'] as String, 
+                      price: product['price'] as double,
+                      image: product['imageUrl'] as String,);
               }
               ),
             )
