@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     'Shoes\nCollection',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
                 Expanded(
@@ -75,9 +75,10 @@ class _HomePageState extends State<HomePage> {
                       child: Chip(
                         label: Text(filter),
                         backgroundColor: selectedFilter == filter
-                            ? Theme.of(context).colorScheme.primary //theme.of(context) is refer to the nearest inheritated widget 
-                            : Color.fromRGBO(245, 247, 249, 1), 
-
+                            ? Theme.of(context)
+                                .colorScheme
+                                .primary //theme.of(context) is refer to the nearest inheritated widget
+                            : Color.fromRGBO(245, 247, 249, 1),
                         side: const BorderSide(
                             color: Color.fromRGBO(245, 247, 249, 1)),
                         labelStyle: TextStyle(fontSize: 16),
@@ -91,21 +92,22 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
-
-            Expanded( //expanded will take all amount of possible space 
+            Expanded(
+              //expanded will take all amount of possible space
               child: ListView.builder(
-                itemCount: products.length,
-                itemBuilder: (context, index){
-                    final product = products[index]; //it will give an access of each product of particular index
+                  itemCount: products.length,
+                  itemBuilder: (context, index) {
+                    final product = products[
+                        index]; //it will give an access of each product of particular index
                     return ProductCard(
-                      title: product['title'] as String, 
+                      title: product['title'] as String,
                       price: product['price'] as double,
                       image: product['imageUrl'] as String,
                       backgroundColor: index.isEven
-                      ? const Color.fromRGBO(216, 240, 253, 1)
-                      :const Color.fromRGBO(245, 247, 249, 1),);
-              }
-              ),
+                          ? const Color.fromRGBO(216, 240, 253, 1)
+                          : const Color.fromRGBO(245, 247, 249, 1),
+                    );
+                  }),
             )
           ],
         ),
