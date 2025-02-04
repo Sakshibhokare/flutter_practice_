@@ -102,7 +102,8 @@ class _HomePageState extends State<HomePage> {
                         index]; //it will give an access of each product of particular index
                     return GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) {
                           return ProductDetailsPage(product: product);
                         }));
                       },
