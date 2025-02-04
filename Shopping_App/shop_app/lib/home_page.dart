@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/cart_page.dart';
 import 'package:shop_app/global_variables.dart';
 import 'package:shop_app/product_card.dart';
 import 'package:shop_app/product_details_page.dart';
@@ -16,17 +17,30 @@ class _HomePageState extends State<HomePage> {
   
   int currentPage = 0;
   
+  List<Widget>pages=[
+      ProductList(),
+      CartPage()
+  ];
 
   @override
   Widget build(BuildContext context) {
     
 
     return Scaffold(
-      body: ProductList(),
+      // body: currentPage == 0 ? ProductList() : CartPage(),
+      body: pages[currentPage], //if you have more than two pages to show
+    //we can also use indexedStack
+      // body: IndexedStack(
+      //   index: currentPage,
+      //   children: pages,
+      // )   , 
       bottomNavigationBar: BottomNavigationBar(
+        iconSize: 35,
+        selectedFontSize: 0,
+        unselectedFontSize: 0, //this removes the space using for label even if it is empty
         onTap:(value){ //avoid using gesture detector here 
           setState(() {
-            currentPage=value;
+            currentPage=value; //updating current page
           });
         } ,
         currentIndex: currentPage,
