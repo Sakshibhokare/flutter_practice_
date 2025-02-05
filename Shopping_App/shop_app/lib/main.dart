@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app/cart_provider.dart';
 import 'package:shop_app/home_page.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
+// types of provider 
+// provider : read only provider
+// changeNotifierProvider: you can change the value and notify the widget that are listening to those changes 
+// FutureProvider: this will listen to futures and show changes 
+// StreamProvider : this will provide a stream 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Provider(
-      create:(context)=>{}, 
+    return ChangeNotifierProvider(
+      create:(context)=> CartProvider(), //it is a simple class of flutter not from provider, when any update will happen it will listen and notify to them 
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Shopping App',

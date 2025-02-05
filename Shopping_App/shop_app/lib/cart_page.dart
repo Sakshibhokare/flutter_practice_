@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/global_variables.dart';
 
 class CartPage extends StatelessWidget {
@@ -6,12 +7,13 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(Provider.of<String>(context)); // it will get the nearest widget, once this got the nearest value it will stop looking for the value 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cart'),
       ),
 
-      
+
       body: ListView.builder( //builder widget will provide a context which you can use
         itemCount: cart.length,
         itemBuilder:(context, index){
