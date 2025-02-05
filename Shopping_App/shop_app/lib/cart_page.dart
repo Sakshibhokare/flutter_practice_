@@ -10,6 +10,8 @@ class CartPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Cart'),
       ),
+
+      
       body: ListView.builder( //builder widget will provide a context which you can use
         itemCount: cart.length,
         itemBuilder:(context, index){
