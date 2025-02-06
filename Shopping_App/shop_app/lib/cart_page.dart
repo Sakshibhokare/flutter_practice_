@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app/global_variables.dart';
+import 'package:shop_app/cart_provider.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    print(Provider.of<String>(context)); // it will get the nearest widget, once this got the nearest value it will stop looking for the value 
+    // print(Provider.of<String>(context)); // it will get the nearest widget, once this got the nearest value it will stop looking for the value
+    final cart=Provider.of<CartProvider>(context).cart;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cart'),
@@ -23,7 +24,13 @@ class CartPage extends StatelessWidget {
               backgroundImage: AssetImage(cartItem['imageUrl'] as String),
               radius: 30,
             ),
-            trailing: IconButton(onPressed: (){}, icon: Icon(Icons.delete)),
+            
+
+            //delete icon on shopping cart page 
+            trailing: IconButton(
+              onPressed: (){}, icon: Icon(Icons.delete)
+              ),
+            
             title: Text(
               cartItem['title'].toString(),
               style: Theme.of(context).textTheme.bodySmall,

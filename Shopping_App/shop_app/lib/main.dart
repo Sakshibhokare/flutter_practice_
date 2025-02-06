@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
+      //instance of this class accessible through out the entire app
       create:(context)=> CartProvider(), //it is a simple class of flutter not from provider, when any update will happen it will listen and notify to them 
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
