@@ -28,7 +28,14 @@ class CartPage extends StatelessWidget {
 
             //delete icon on shopping cart page 
             trailing: IconButton(
-              onPressed: (){}, icon: Icon(Icons.delete)
+              onPressed: (){
+                showDialog(
+                  context: context,
+                  builder: (context){
+                    return Dialog(child: Text('Are you sure?'),);
+                  }
+                  );
+              }, icon: Icon(Icons.delete)
               ),
             
             title: Text(
