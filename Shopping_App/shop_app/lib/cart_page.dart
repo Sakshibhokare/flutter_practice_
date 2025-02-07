@@ -32,7 +32,23 @@ class CartPage extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (context){
-                    return Dialog(child: Text('Are you sure?'),);
+                    return AlertDialog(
+                      title: Text('Delete Product',
+                      style: Theme.of(context).textTheme.bodyMedium,),
+                      content: Text('are you sure you want to remove the product from your cart?'),
+                      actions: [
+                        TextButton(onPressed: (){
+                              Navigator.of(context).pop();
+                        }, child: Text('No', style: TextStyle(color: Colors.blue),)),
+
+                        TextButton(onPressed: (){
+                              Provider.of<CartProvider>(context, listen: false).removeProduct(cartItem);
+                              Navigator.of(context).pop();
+                        }, child: Text('Yes', style: TextStyle(color: Colors.red),)),
+
+
+                      ],
+                      );
                   }
                   );
               }, icon: Icon(Icons.delete)
