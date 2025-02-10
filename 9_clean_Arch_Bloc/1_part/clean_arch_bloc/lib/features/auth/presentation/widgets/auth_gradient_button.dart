@@ -11,15 +11,20 @@ class AuthGradientButton extends StatelessWidget {
         gradient: LinearGradient(colors: [
           AppPallete.gradient1, 
           AppPallete.gradient2
-        ])
+        ],
+        begin: Alignment.bottomLeft,
+        end: Alignment.topRight),
+        borderRadius: BorderRadius.circular(7)
       ),
+      
       child: ElevatedButton(
         onPressed: (){
           
       }, 
       style: ElevatedButton.styleFrom(
         fixedSize: Size(395, 55),
-        backgroundColor: Colors.transparent
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent
       ),
       child: Text('Sign Up', style: TextStyle(
         fontSize: 17,
