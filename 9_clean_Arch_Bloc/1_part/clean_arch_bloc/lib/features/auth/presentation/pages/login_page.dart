@@ -3,18 +3,17 @@ import 'package:clean_arch_bloc/features/auth/presentation/widgets/auth_field.da
 import 'package:clean_arch_bloc/features/auth/presentation/widgets/auth_gradient_button.dart';
 import 'package:flutter/material.dart';
 // for each feature we need to create a folder with data domain and presentation 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class LogInPage extends StatefulWidget {
+  const LogInPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<LogInPage> createState() => _LogInPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
+class _LogInPageState extends State<LogInPage> {
   //we have created controllers to access the text user writing in the text field 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final nameController = TextEditingController();
   final formKey = GlobalKey<FormState>();//we create a global key of type form state
   
 
@@ -23,7 +22,7 @@ class _SignupPageState extends State<SignupPage> {
     // TODO: implement dispose
     emailController.dispose();
     passwordController.dispose();
-    nameController.dispose();
+  
     super.dispose();
   }
   
@@ -45,20 +44,19 @@ class _SignupPageState extends State<SignupPage> {
               ),),
           
               SizedBox(height: 30,),
-              AuthField(hintText: 'Name', controller: nameController,),
-              SizedBox(height: 15,),
+              
               AuthField(hintText: 'Email', controller: emailController, ),
               SizedBox(height: 15,),
               AuthField(hintText: 'Password', controller: passwordController, isObscureText: true,),
               SizedBox(height: 20,),
-              AuthGradientButton(buttonText: 'Sign Up',),
+              AuthGradientButton(buttonText: 'Log in',),
               SizedBox(height: 20,),
               RichText(text: TextSpan(
-                text: "Already have an account? ",
+                text: "Don't have an account? ",
                 style: Theme.of(context).textTheme.titleMedium,
                 children: [
                   TextSpan(
-                    text: 'Sign In',
+                    text: 'Sign Up',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: AppPallete.gradient2,
                       fontWeight: FontWeight.bold
