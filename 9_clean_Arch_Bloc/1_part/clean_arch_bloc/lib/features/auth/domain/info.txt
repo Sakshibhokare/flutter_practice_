@@ -4,7 +4,7 @@ the core business logic is written here
 
 we have repository, entities and use cases in this layer 
 
-why we have repository in domain layer and data layer :
+why do we have repository in domain layer and data layer :
 because of the principle of separation, according to this 
 domain layer should not be dependant on any layer, so if use cases
 has to call  the repository present in the data layer 
