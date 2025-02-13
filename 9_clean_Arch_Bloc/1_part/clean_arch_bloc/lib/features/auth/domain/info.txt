@@ -1,0 +1,13 @@
+Domain layer: is consider the most stable layer 
+
+the core business logic is written here 
+
+we have repository, entities and use cases in this layer 
+
+why we have repository in domain layer and data layer :
+because of the principle of separation, according to this 
+domain layer should not be dependant on any layer, so if use cases
+has to call  the repository present in the data layer 
+is depending on the data layer, so this will create a problem
+so due to this we create the interface for repository
+
