@@ -11,3 +11,6 @@ has to call  the repository present in the data layer
 is depending on the data layer, so this will create a problem
 so due to this we create the interface for repository
 
+useCases*********
+useCases are any single class or function only for one particular event or work 
+for example usersignUp is on usecase, userLogIn is another
